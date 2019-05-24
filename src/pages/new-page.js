@@ -1,5 +1,5 @@
-import React from 'react'
-import Layout from 'components/layout'
+import React from 'react';
+import { Layout } from 'Layouts';
 
 const newPage = () => {
   return (
@@ -14,7 +14,7 @@ const newPage = () => {
         </p>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default newPage
+export default newPage;

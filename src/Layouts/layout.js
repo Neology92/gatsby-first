@@ -9,6 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
+import { Archive } from 'components';
 import Header from './header';
 import GlobalStyle from './GlobalStyle';
 
@@ -36,6 +37,7 @@ const Layout = ({ children }) => (
           }}
         >
           <main>{children}</main>
+          <Archive />
           <footer>
             © {new Date().getFullYear()}, Built with
             {` `}

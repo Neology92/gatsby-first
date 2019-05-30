@@ -1,4 +1,5 @@
-import Image from './image'
-import SEO from './seo'
+import Image from './image';
+import SEO from './seo';
+import Archive from './Archive';
 
-export { Image, SEO }
+export { Image, SEO, Archive };

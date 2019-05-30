@@ -1,22 +1,24 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-const Archive = () => (
-  <StaticQuery
-    query={graphql`
-      query BlogPostsArchive {
-        allMarkdownRemark {
-          edges {
-            node {
-              frontmatter {
-                title
-                path
-              }
-            }
+const POST_ARCHIVE_QUERY = graphql`
+  query BlogPostsArchive {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+            path
           }
         }
       }
-    `}
+    }
+  }
+`;
+
+const Archive = () => (
+  <StaticQuery
+    query={POST_ARCHIVE_QUERY}
     render={({ allMarkdownRemark }) => (
       <>
         <aside>

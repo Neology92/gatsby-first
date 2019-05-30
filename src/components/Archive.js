@@ -11,7 +11,7 @@ const Archive = () => (
           <ul>
             {allMarkdownRemark.edges.map(edge => (
               <li key={edge.node.frontmatter.path}>
-                <Link to={`/posts/${edge.node.frontmatter.path}`}>
+                <Link to={`/posts${edge.node.frontmatter.path}`}>
                   {edge.node.frontmatter.title}
                 </Link>
               </li>
@@ -25,7 +25,10 @@ const Archive = () => (
 
 const POST_ARCHIVE_QUERY = graphql`
   query BlogPostsArchive {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      limit: 5
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           frontmatter {

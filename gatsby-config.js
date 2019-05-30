@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-resolve-src', // Absolute path in code
+    `gatsby-plugin-styled-components`, // Styled Components <3
     `gatsby-transformer-remark`, //
     `gatsby-plugin-react-helmet`,
     {

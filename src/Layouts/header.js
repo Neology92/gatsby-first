@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import gatsbyLogo from 'images/gatsby-icon.png';
-import { Logo } from 'Elements';
+import { Logo } from 'elements';
 
 const Header = ({ siteTitle }) => (
   <header

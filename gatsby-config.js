@@ -5,14 +5,21 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    // Absolute path in code
-    'gatsby-plugin-resolve-src',
+    'gatsby-plugin-resolve-src', // Absolute path in code
+    `gatsby-transformer-remark`, //
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
       },
     },
     `gatsby-transformer-sharp`,

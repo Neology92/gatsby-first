@@ -1,4 +1,5 @@
-import Layout from './layout'
-import Header from './header'
+import Layout from './layout';
+import Header from './header';
+import PostLayout from './postLayout';
 
-export { Layout, Header }
+export { Layout, Header, PostLayout };

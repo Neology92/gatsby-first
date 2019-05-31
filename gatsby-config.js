@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Roll 4 Design`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Roll 4 Gatsby Blog`,
+    description: `My first gatsby project. Let's learn some new things!`,
+    author: `@Neology`,
   },
   plugins: [
     'gatsby-plugin-resolve-src', // Absolute path in code

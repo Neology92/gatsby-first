@@ -44,6 +44,7 @@ const GlobalStyle = createGlobalStyle`
     }
     a {
     background-color: transparent;
+    text-decoration: none;
     -webkit-text-decoration-skip: objects;
     }
     a:active,
@@ -125,6 +126,7 @@ const GlobalStyle = createGlobalStyle`
     }
     button,
     select {
+    border: none;
     text-transform: none;
     }
     [type="reset"],
@@ -202,6 +204,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
     }
     body {
+        background-color: #f0f4ff;
     color: hsla(0, 0%, 0%, 0.8);
     font-family: georgia, serif;
     font-weight: normal;

@@ -221,7 +221,7 @@ const GlobalStyle = createGlobalStyle`
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
-    margin-bottom: 1.45rem;
+    margin-bottom: 0;
     }
     h1 {
     margin-left: 0;

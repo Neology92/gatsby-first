@@ -1,37 +1,41 @@
-import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
 
-import gatsbyLogo from 'images/gatsby-icon.png';
+import DiceLogo from 'images/icon.png';
 import { Logo } from 'elements';
 
+const Wrapper = styled.header`
+  background: #a0c6fe;
+`;
+
+const Container = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1.45rem 1.0875rem;
+`;
+
+const HeadingLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+  display: flex;
+
+  & h1 {
+    margin: 0 0 0 20px;
+    color: #010b61;
+  }
+`;
+
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <Link
-        to="/"
-        style={{
-          color: `white`,
-          textDecoration: `none`,
-          display: 'flex',
-        }}
-      >
-        <Logo src={gatsbyLogo} alt="Gatsby Logo" />
-        <h1 style={{ margin: 0 }}>{siteTitle}</h1>
-      </Link>
-    </div>
-  </header>
+  <Wrapper>
+    <Container>
+      <HeadingLink to="/">
+        <Logo src={DiceLogo} alt="Logo - dice" />
+        <h1>{siteTitle}</h1>
+      </HeadingLink>
+    </Container>
+  </Wrapper>
 );
 
 Header.propTypes = {

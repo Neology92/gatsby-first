@@ -204,7 +204,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
     }
     body {
-        background-color: #f0f4ff;
+    background-color: #f0f4ff;
     color: hsla(0, 0%, 0%, 0.8);
     font-family: georgia, serif;
     font-weight: normal;

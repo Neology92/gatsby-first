@@ -13,7 +13,7 @@ const MainWrapper = styled.div`
   padding: 0px 1rem 1rem;
   margin-top: 1.5rem;
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 3fr 1fr;
   & main {
     padding: 0 1rem 0 0;
   }

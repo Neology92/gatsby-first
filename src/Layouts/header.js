@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import DiceLogo from 'images/icon.png';
-import { Logo } from 'elements';
+import { Image_Logo } from 'images';
 
 const Wrapper = styled.header`
   background: #a0c6fe;
@@ -31,7 +30,8 @@ const Header = ({ siteTitle }) => (
   <Wrapper>
     <Container>
       <HeadingLink to="/">
-        <Logo src={DiceLogo} alt="Logo - dice" />
+        {/* eslint-disable-next-line*/}
+        <Image_Logo />
         <h1>{siteTitle}</h1>
       </HeadingLink>
     </Container>

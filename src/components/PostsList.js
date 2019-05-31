@@ -8,7 +8,6 @@ const PostsList = () => (
     render={({ allMarkdownRemark }) =>
       allMarkdownRemark.edges.map(({ node }) => (
         <section key={node.frontmatter.slug}>
-          <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
           <h1>{node.frontmatter.title}</h1>
           <p>{node.frontmatter.date}</p>
           <p style={{ marginBottom: `0.8rem` }}>{node.excerpt}</p>

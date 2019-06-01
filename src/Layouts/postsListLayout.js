@@ -22,7 +22,7 @@ const Number = styled(Link)`
   margin: 0 10px;
 `;
 
-export default class PostsListLayout extends Component {
+export default class postsListLayout extends Component {
   render() {
     const { allMarkdownRemark } = this.props.data;
     const { pages } = this.props.pageContext;

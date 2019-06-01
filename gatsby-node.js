@@ -28,7 +28,7 @@ exports.createPages = ({ graphql, actions }) => {
       Promise.reject(result.errors);
     }
 
-    const postTemplate = path.resolve('./src/layouts/postLayout.js');
+    const postTemplate = path.resolve('src/layouts/postLayout.js');
     result.data.posts.edges.forEach(({ node }) => {
       createPage({
         path: `/posts${node.frontmatter.slug}`,
@@ -43,7 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
     const postsPerPage = 3;
     const pages = (postsAmount + postsPerPage - 1) / postsPerPage;
 
-    const postsPageTemplate = path.resolve('./src/layouts/postsListLayout.js');
+    const postsPageTemplate = path.resolve('src/layouts/postsListLayout.js');
     for (let i = 1; i <= pages; i++) {
       const toSkip = (i - 1) * postsPerPage;
       createPage({

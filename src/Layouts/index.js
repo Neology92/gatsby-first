@@ -1,6 +1,6 @@
 import Layout from './layout';
 import Header from './header';
 import PostLayout from './postLayout';
-import PostsPageLayout from './postsPageLayout';
+import PostsListLayout from './postsListLayout';
 
-export { Layout, Header, PostLayout, PostsPageLayout };
+export { Layout, Header, PostLayout, PostsListLayout };

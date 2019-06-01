@@ -1,19 +1,50 @@
 import React, { Component } from 'react';
 import { graphql, Link } from 'gatsby';
+import styled from 'styled-components';
+
 import Layout from './layout';
 import { PostsList, SEO } from 'components';
 
-export default class PostsPageLayout extends Component {
+const Pages = styled.div`
+  margin: 2rem;
+  text-align: right;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+`;
+
+const PageNumbers = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const Number = styled(Link)`
+  text-decoration: none;
+  margin: 0 10px;
+`;
+
+export default class PostsListLayout extends Component {
   render() {
     const { allMarkdownRemark } = this.props.data;
+    const { pages } = this.props.pathContext;
+
+    const pageNumbers = [];
+
+    for (let i = 1; i <= pages; i++) {
+      pageNumbers.push(
+        <Number key={i} to={`/${i}`}>
+          {i}
+        </Number>
+      );
+    }
 
     return (
       <Layout>
         <SEO title="Home" />
         <PostsList allMarkdownRemark={allMarkdownRemark} />
-        <div style={{ margin: `2rem`, textAlign: `right` }}>
+        <Pages>
+          <PageNumbers>{pageNumbers}</PageNumbers>
           <Link to="/page-2/">Page 2</Link>
-        </div>
+        </Pages>
       </Layout>
     );
   }

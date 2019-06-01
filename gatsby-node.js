@@ -43,8 +43,8 @@ exports.createPages = ({ graphql, actions }) => {
     const postsPerPage = 3;
     const pages = (postsAmount + postsPerPage - 1) / postsPerPage;
 
-    const postsPageTemplate = path.resolve('./src/layouts/postsPageLayout.js');
-    for (let i = 2; i <= pages; i++) {
+    const postsPageTemplate = path.resolve('./src/layouts/postsListLayout.js');
+    for (let i = 1; i <= pages; i++) {
       const toSkip = (i - 1) * postsPerPage;
       createPage({
         path: `/${i}`,
@@ -52,6 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           skip: toSkip,
           limit: postsPerPage,
+          pages: pages,
         },
       });
     }

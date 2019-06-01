@@ -56,5 +56,15 @@ exports.createPages = ({ graphql, actions }) => {
         },
       });
     }
+
+    createPage({
+      path: `/`,
+      component: postsPageTemplate,
+      context: {
+        skip: 0,
+        limit: postsPerPage,
+        pages: pages,
+      },
+    });
   });
 };

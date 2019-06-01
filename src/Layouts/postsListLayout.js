@@ -25,11 +25,17 @@ const Number = styled(Link)`
 export default class PostsListLayout extends Component {
   render() {
     const { allMarkdownRemark } = this.props.data;
-    const { pages } = this.props.pathContext;
+    const { pages } = this.props.pageContext;
 
     const pageNumbers = [];
 
-    for (let i = 1; i <= pages; i++) {
+    pageNumbers.push(
+      <Number key={1} to={`/`}>
+        1
+      </Number>
+    );
+
+    for (let i = 2; i <= pages; i++) {
       pageNumbers.push(
         <Number key={i} to={`/${i}`}>
           {i}

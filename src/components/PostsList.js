@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link, graphql, StaticQuery } from 'gatsby';
+import React, { Fragment } from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 // import Image from './Image.js';
 
@@ -25,39 +25,19 @@ const Post = styled.section`
   }
 `;
 
-const PostsList = () => (
-  <StaticQuery
-    query={POSTS_LIST_QUERY}
-    render={({ allMarkdownRemark }) =>
-      allMarkdownRemark.edges.map(({ node }) => (
-        <Post key={node.frontmatter.slug}>
-          <h1>{node.frontmatter.title}</h1>
-          <p className="date">{node.frontmatter.date}</p>
-          <p style={{ marginBottom: `0.8rem` }}>{node.excerpt}</p>
-          <Link to={`/posts${node.frontmatter.slug}`}>
-            <Button> &rarr; &nbsp; Read more </Button>
-          </Link>
-        </Post>
-      ))
-    }
-  />
+const PostsList = props => (
+  <Fragment>
+    {props.allMarkdownRemark.edges.map(({ node }) => (
+      <Post key={node.frontmatter.slug}>
+        <h1>{node.frontmatter.title}</h1>
+        <p className="date">{node.frontmatter.date}</p>
+        <p style={{ marginBottom: `0.8rem` }}>{node.excerpt}</p>
+        <Link to={`/posts${node.frontmatter.slug}`}>
+          <Button> &rarr; &nbsp; Read more </Button>
+        </Link>
+      </Post>
+    ))}
+  </Fragment>
 );
-
-const POSTS_LIST_QUERY = graphql`
-  query PostsListing {
-    allMarkdownRemark {
-      edges {
-        node {
-          excerpt
-          frontmatter {
-            slug
-            date(formatString: "MMMM DD, YYYY")
-            title
-          }
-        }
-      }
-    }
-  }
-`;
 
 export default PostsList;

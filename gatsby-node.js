@@ -3,30 +3,57 @@ const path = require('path');
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  return new Promise((resolve, reject) => {
-    graphql(`
-      {
-        allMarkdownRemark {
-          edges {
-            node {
-              frontmatter {
-                slug
-              }
+  return graphql(`
+    {
+      posts: allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              slug
             }
           }
         }
       }
-    `).then(result => {
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-          path: `/posts${node.frontmatter.slug}`,
-          component: path.resolve('./src/layouts/postLayout.js'),
-          context: {
-            slug: node.frontmatter.slug,
-          },
-        });
+
+      postsList: allMarkdownRemark {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      Promise.reject(result.errors);
+    }
+
+    const postTemplate = path.resolve('./src/layouts/postLayout.js');
+    result.data.posts.edges.forEach(({ node }) => {
+      createPage({
+        path: `/posts${node.frontmatter.slug}`,
+        component: postTemplate,
+        context: {
+          slug: node.frontmatter.slug,
+        },
       });
-      resolve();
     });
+
+    const postsAmount = result.data.postsList.edges.length;
+    const postsPerPage = 3;
+    const pages = (postsAmount + postsPerPage - 1) / postsPerPage;
+
+    const postsPageTemplate = path.resolve('./src/layouts/postsPageLayout.js');
+    for (let i = 2; i <= pages; i++) {
+      const toSkip = (i - 1) * postsPerPage;
+      createPage({
+        path: `/${i}`,
+        component: postsPageTemplate,
+        context: {
+          skip: toSkip,
+          limit: postsPerPage,
+        },
+      });
+    }
   });
 };

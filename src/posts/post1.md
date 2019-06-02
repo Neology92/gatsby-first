@@ -1,12 +1,11 @@
 ---
-slug: '/first-post'
+slug: /first-post
 date: '2019-05-30'
-title: 'My first post'
+title: My first post
 ---
-
 # Hi
 
-Minim adipisicing amet do sit esse eu. Minim cillum est eiusmod reprehenderit velit dolor dolor consectetur. Eiusmod anim commodo eiusmod exercitation consectetur cillum ullamco laborum id aliquip.
+Miinim adipisicing amet do sit esse eu. Minim cillum est eiusmod reprehenderit velit dolor dolor consectetur. Eiusmod anim commodo eiusmod exercitation consectetur cillum ullamco laborum id aliquip.
 
 Dolor non eiusmod sunt ea et. Veniam ea consequat et deserunt magna. In duis irure anim cupidatat nisi non. Minim consequat in in adipisicing officia id id mollit veniam minim duis ullamco excepteur. Incididunt incididunt eu duis enim id consequat et ullamco pariatur. Cillum magna ad officia irure exercitation qui enim aute laboris. Nostrud ut cillum proident amet do Lorem.
 

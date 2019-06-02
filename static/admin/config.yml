@@ -10,15 +10,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'team'
-    label: 'Team'
-    folder: 'src/team'
-    create: true
-    slug: '{{ slug }}'
-    fields:
-      - { label: 'Team member', name: 'title', widget: 'string' }
-      - { label: 'Bio', name: 'bio', widget: 'markdown' }
-
   - name: 'posts'
     label: 'Posts'
     folder: 'src/posts'
@@ -29,3 +20,12 @@ collections:
       - { label: 'Date', name: 'date', widget: 'date' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Content', name: 'body', widget: 'markdown' }
+
+  - name: 'team'
+    label: 'Team'
+    folder: 'src/team'
+    create: true
+    slug: '{{ slug }}'
+    fields:
+      - { label: 'Team member', name: 'title', widget: 'string' }
+      - { label: 'Bio', name: 'bio', widget: 'markdown' }

@@ -9,6 +9,7 @@ module.exports = {
     `gatsby-plugin-styled-components`, // Styled Components <3
     `gatsby-transformer-remark`, // Allows to  work on .md files queries
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

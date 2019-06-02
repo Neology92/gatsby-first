@@ -2,9 +2,9 @@
 publish_mode: editorial_workflow
 
 backend:
-  name: git-gateway
+  name: github
   branch: master
-  repo: Nelogy92/gatsby-first
+  repo: Neology92/gatsby-first
 
 media_folder: static/img
 public_folder: /img

@@ -2,7 +2,7 @@
 publish_mode: editorial_workflow
 
 backend:
-  name: github
+  name: git-gateway
   branch: master
   repo: Neology92/gatsby-first
 
@@ -18,3 +18,14 @@ collections:
     fields:
       - { label: 'Team member', name: 'title', widget: 'string' }
       - { label: 'Bio', name: 'bio', widget: 'markdown' }
+
+  - name: 'posts'
+    label: 'Posts'
+    folder: 'src/posts'
+    create: true
+    slug: '{{ slug }}'
+    fields:
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'date' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Content', name: 'body', widget: 'markdown' }

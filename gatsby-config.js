@@ -8,6 +8,7 @@ module.exports = {
     'gatsby-plugin-resolve-src', // Absolute path in code
     `gatsby-plugin-styled-components`, // Styled Components <3
     `gatsby-transformer-remark`, // Allows to  work on .md files queries
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

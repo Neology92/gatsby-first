@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { Archive } from 'components';
 import Header from './header';
 import GlobalStyle from './GlobalStyle';
+import { Image_Banner } from 'images';
 
 const MainWrapper = styled.div`
   margin: 0 auto;
@@ -34,6 +35,8 @@ const Layout = ({ children }) => (
       <>
         <GlobalStyle />
         <Header siteTitle={data.site.siteMetadata.title} />
+        {/* eslint-disable-next-line*/}
+        <Image_Banner />
         <MainWrapper>
           <main>{children}</main>
           <Archive />

@@ -3,12 +3,14 @@ module.exports = {
     title: `Roll 4 Gatsby Blog`,
     description: `My first gatsby project. Let's learn some new things!`,
     author: `@Neology`,
+    siteUrl: `https://musing-perlman-9248db.netlify.com/`,
   },
   plugins: [
     'gatsby-plugin-resolve-src', // Absolute path in code
     `gatsby-plugin-styled-components`, // Styled Components <3
     `gatsby-transformer-remark`, // Allows to  work on .md files queries
     `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

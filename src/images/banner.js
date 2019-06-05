@@ -4,7 +4,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-const Image_Banner = () => (
+const ImageBanner = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -25,4 +25,4 @@ const Image_Banner = () => (
     )}
   />
 );
-export default Image_Banner;
+export default ImageBanner;

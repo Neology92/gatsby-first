@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { Image_Logo } from 'images';
+import { ImageLogo } from 'images';
 
 const Wrapper = styled.header`
   background: #a0c6fe;
@@ -30,8 +30,7 @@ const Header = ({ siteTitle }) => (
   <Wrapper>
     <Container>
       <HeadingLink to="/">
-        {/* eslint-disable-next-line*/}
-        <Image_Logo />
+        <ImageLogo />
         <h1>{siteTitle}</h1>
       </HeadingLink>
     </Container>

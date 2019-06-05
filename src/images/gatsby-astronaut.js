@@ -2,7 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-const Image_GatsbyAstronaut = () => (
+const ImageGatsbyAstronaut = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -23,4 +23,4 @@ const Image_GatsbyAstronaut = () => (
     )}
   />
 );
-export default Image_GatsbyAstronaut;
+export default ImageGatsbyAstronaut;

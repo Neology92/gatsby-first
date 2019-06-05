@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { Archive } from 'components';
 import Header from './header';
 import GlobalStyle from './GlobalStyle';
-import { Image_Banner } from 'images';
+import { ImageBanner } from 'images';
 
 const MainWrapper = styled.div`
   margin: 0 auto;
@@ -18,6 +18,11 @@ const MainWrapper = styled.div`
   & main {
     padding: 0 1rem 0 0;
   }
+`;
+
+const BannerWrapper = styled.div`
+  height: 500px;
+  overflow: hidden;
 `;
 
 const Layout = ({ children }) => (
@@ -34,13 +39,17 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <GlobalStyle />
+
         <Header siteTitle={data.site.siteMetadata.title} />
-        {/* eslint-disable-next-line*/}
-        <Image_Banner />
+        <BannerWrapper>
+          <ImageBanner />
+        </BannerWrapper>
+
         <MainWrapper>
           <main>{children}</main>
           <Archive />
         </MainWrapper>
+
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}

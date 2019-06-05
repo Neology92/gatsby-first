@@ -24,6 +24,7 @@ const Number = styled(Link)`
 
 export default class PostsListLayout extends Component {
   render() {
+    const { pathname } = this.props.location;
     const { allMarkdownRemark } = this.props.data;
     const { pages } = this.props.pageContext;
 
@@ -44,7 +45,7 @@ export default class PostsListLayout extends Component {
     }
 
     return (
-      <Layout>
+      <Layout pathname={pathname}>
         <SEO title="Home" />
         <PostsList allMarkdownRemark={allMarkdownRemark} />
         <Pages>

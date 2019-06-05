@@ -21,11 +21,11 @@ const MainWrapper = styled.div`
 `;
 
 const BannerWrapper = styled.div`
-  height: 500px;
+  max-height: 300px;
   overflow: hidden;
 `;
 
-const Layout = ({ children }) => (
+const Layout = ({ children, pathname }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -41,7 +41,8 @@ const Layout = ({ children }) => (
         <GlobalStyle />
 
         <Header siteTitle={data.site.siteMetadata.title} />
-        <BannerWrapper>
+
+        <BannerWrapper pathname={pathname}>
           <ImageBanner />
         </BannerWrapper>
 

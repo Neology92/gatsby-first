@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
+import { Spring } from 'react-spring/renderprops';
 
 import { Archive } from 'components';
 import Header from './header';
@@ -21,7 +22,6 @@ const MainWrapper = styled.div`
 `;
 
 const BannerWrapper = styled.div`
-  max-height: 300px;
   overflow: hidden;
 `;
 
@@ -42,9 +42,16 @@ const Layout = ({ children, pathname }) => (
 
         <Header siteTitle={data.site.siteMetadata.title} />
 
-        <BannerWrapper pathname={pathname}>
-          <ImageBanner />
-        </BannerWrapper>
+        <Spring
+          from={{ maxHeight: pathname === '/' ? '300px' : '500px' }}
+          to={{ maxHeight: pathname === '/' ? '500px' : '300px' }}
+        >
+          {props => (
+            <BannerWrapper pathname={pathname} style={props}>
+              <ImageBanner />
+            </BannerWrapper>
+          )}
+        </Spring>
 
         <MainWrapper>
           <main>{children}</main>
